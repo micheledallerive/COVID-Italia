@@ -1,0 +1,36 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="fontFamily">@font/roboto</item>
+    </style>
+
+    <style name="LightTheme" parent="AppTheme">
+        <item name="white">@color/black</item>
+        <item name="black">@color/white</item>
+    </style>
+
+    <style name="DarkTheme" parent="AppTheme">
+        <item name="black">@color/white</item>
+        <item name="white">@color/black</item>
+    </style>
+
+    <style name="BottomNavigationStyle" parent="">
+        <item name="elevation">0dp</item>
+        <item name="enforceTextAppearance">false</item>
+        <item name="enforceMaterialTheme">false</item>
+        <item name="itemBackground">?attr/selectableItemBackgroundBorderless</item>
+        <item name="itemHorizontalTranslationEnabled">true</item>
+        <item name="itemIconSize">24dp</item>
+        <item name="labelVisibilityMode">auto</item>
+    </style>
+
+    <style name="TodayStyleText">
+        <item name="android:textColor">#757575</item>
+    </style>
+
+</resources>

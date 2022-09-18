@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1023597501193",
+    "firebase_url": "https://propriet-d2d1d.firebaseio.com",
+    "project_id": "propriet-d2d1d",
+    "storage_bucket": "propriet-d2d1d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1023597501193:android:d250e614786da0d9b9d1d8",
+        "android_client_info": {
+          "package_name": "it.micheledallerive.covid_italia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1023597501193-4i0g833uqp22dapv9tq2ouf5ih1ivqrf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_eH6_zbqZrFokCleAMgIPtTEIxGIXWxk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1023597501193-4i0g833uqp22dapv9tq2ouf5ih1ivqrf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

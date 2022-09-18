@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.TodayFragment"
+        >
+
+        <include
+            android:id="@+id/appbar"
+            layout="@layout/appbar"
+            app:myTitle='@{"Aggiornamento"}' />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="64dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:paddingHorizontal="4dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/infected_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:backgroundTint="@android:color/white"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="4dp"
+                        app:cardUseCompatPadding="true"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:layout_editor_absoluteX="24dp"
+                        tools:layout_editor_absoluteY="78dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/infected_border"
+                            android:paddingHorizontal="24dp"
+                            android:paddingVertical="12dp">
+
+                            <TextView
+                                android:id="@+id/textView4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:height="42dp"
+                                android:text="@string/infetti"
+                                android:textColor="@color/red"
+                                android:textSize="32sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/infected"
+                                style="@style/TodayStyleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:height="42dp"
+                                android:gravity="center"
+                                android:textSize="24sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/new_infected_label"
+                                style="@style/TodayStyleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:height="42dp"
+                                android:gravity="center"
+                                android:text="@string/nuovi_oggi"
+                                android:textSize="18sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/variazione_infected_label_today" />
+
+                            <TextView
+                                android:id="@+id/new_infected"
+                                style="@style/TodayStyleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="8dp"
+                                android:height="42dp"
+                                android:gravity="center"
+                                android:textSize="24sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/variazione_infected_today" />
+
+                            <TextView
+                                android:id="@+id/variazione_infected_label_today"
+                                style="@style/TodayStyleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginEnd="8dp"
+                                android:height="42dp"
+                                android:gravity="center"
+                                android:text="@string/complessivi"
+                                android:textSize="18sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+                            <TextView
+                                android:id="@+id/variazione_infected_today"
+                                style="@style/TodayStyleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="8dp"
+                                android:height="42dp"
+                                android:gravity="center"
+                                android:textSize="24sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+                            <TextView
+                                android:id="@+id/yesterday_new_infected_label"
+                                style="@style/TodayStyleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginEnd="16dp"
+                                android:height="42dp"
+                                android:gravity="center"
+                                android:text="@string/nuovi_ieri"
+                                android:textSize="18sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/new_infected_label" />
+
+                            <TextView
+                                android:id="@+id/yesterday_new_infected"
+                                style="@style/TodayStyleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="8dp"
+                                android:height="42dp"
+                                android:gravity="center"
+                                android:textSize="24sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/new_infected" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/recovered_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="8dp"
+                        android:backgroundTint="@android:color/white"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="4dp"
+                        app:cardUseCompatPadding="true"
+                        app:layout_constraintTop_toBottomOf="@id/infected_container">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/recovered_border"
+                            android:paddingHorizontal="24dp"
+                            android:paddingVertical="8dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:height="42dp"
+                                android:text="@string/guariti"
+                                android:textColor="@color/green"
+                                android:textSize="32sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/recovered"
+                                style="@style/TodayStyleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:height="42dp"
+                                android:gravity="center"
+                                android:textSize="24sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/new_recovered_label"
+                                style="@style/TodayStyleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="16dp"
+                                android:height="42dp"
+                                android:gravity="center"
+                                android:text="@string/oggi"
+                                android:textSize="18sp"
+                                app:layout_constraintEnd_toStartOf="@id/new_recovered"
+                                app:layout_constraintTop_toBottomOf="@id/recovered" />
+
+                            <TextView
+                                android:id="@+id/new_recovered"
+                                style="@style/TodayStyleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:height="42dp"
+                                android:gravity="center"
+                                android:textSize="24sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/recovered" />
+
+                            <TextView
+                                android:id="@+id/yesterday_new_recovered_label"
+                                style="@style/TodayStyleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="16dp"
+                                android:height="42dp"
+                                android:gravity="center"
+                                android:text="@string/ieri"
+                                android:textSize="18sp"
+                                app:layout_constraintEnd_toStartOf="@id/yesterday_new_recovered"
+                                app:layout_constraintTop_toBottomOf="@id/new_recovered" />
+
+                            <TextView
+                                android:id="@+id/yesterday_new_recovered"
+                                style="@style/TodayStyleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:height="42dp"
+                                android:gravity="center"
+                                android:textSize="24sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/new_recovered" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/dead_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="8dp"
+                        android:backgroundTint="@android:color/white"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="4dp"
+                        app:cardUseCompatPadding="true"
+                        app:layout_constraintTop_toBottomOf="@id/recovered_container">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/dead_border"
+                            android:paddingHorizontal="24dp"
+                            android:paddingVertical="8dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:height="42dp"
+                                android:text="@string/morti"
+                                android:textColor="@color/black"
+                                android:textSize="32sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/dead"
+                                style="@style/TodayStyleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:height="42dp"
+                                android:gravity="center"
+                                android:textSize="24sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/new_dead_label"
+                                style="@style/TodayStyleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="16dp"
+                                android:height="42dp"
+                                android:gravity="center"
+                                android:text="@string/oggi"
+                                android:textSize="18sp"
+                                app:layout_constraintEnd_toStartOf="@id/new_dead"
+                                app:layout_constraintTop_toBottomOf="@id/dead" />
+
+                            <TextView
+                                android:id="@+id/new_dead"
+                                style="@style/TodayStyleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:height="42dp"
+                                android:gravity="center"
+                                android:textSize="24sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/dead" />
+
+                            <TextView
+                                android:id="@+id/yesterday_new_dead_label"
+                                style="@style/TodayStyleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="16dp"
+                                android:height="42dp"
+                                android:gravity="center"
+                                android:text="@string/ieri"
+                                android:textSize="18sp"
+                                app:layout_constraintEnd_toStartOf="@id/yesterday_new_dead"
+                                app:layout_constraintTop_toBottomOf="@id/new_dead" />
+
+                            <TextView
+                                android:id="@+id/yesterday_new_dead"
+                                style="@style/TodayStyleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:height="42dp"
+                                android:gravity="center"
+                                android:textSize="24sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/new_dead" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/tamponi_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="8dp"
+                        android:backgroundTint="@android:color/white"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="4dp"
+                        app:cardUseCompatPadding="true"
+                        app:layout_constraintTop_toBottomOf="@id/dead_container">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="24dp"
+                            android:paddingVertical="8dp">
+
+                            <TextView
+                                android:id="@+id/textView2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:height="42dp"
+                                android:text="@string/tamponi"
+                                android:textSize="28sp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <com.github.mikephil.charting.charts.PieChart
+                                android:id="@+id/today_tamponi_chart"
+                                android:layout_width="256dp"
+                                android:layout_height="256dp"
+                                android:layout_marginTop="16dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </ScrollView>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

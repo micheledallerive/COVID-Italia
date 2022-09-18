@@ -1,0 +1,39 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_map"
+        android:icon="@drawable/ic_map"
+        android:iconTint="@color/colorPrimary"
+        android:title="@string/mappa"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/menu_chart"
+        android:icon="@drawable/ic_chart"
+        android:iconTint="@color/colorPrimary"
+        android:title="@string/grafici"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/menu_today"
+        android:icon="@drawable/ic_today"
+        android:iconTint="@color/colorPrimary"
+        android:title="@string/oggi"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/menu_news"
+        android:icon="@drawable/ic_news"
+        android:iconTint="@color/colorPrimary"
+        android:title="@string/notizie"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/menu_settings"
+        android:icon="@drawable/ic_settings"
+        android:iconTint="@color/colorPrimary"
+        android:title="@string/impostazioni"
+        app:showAsAction="ifRoom"/>
+
+</menu>
