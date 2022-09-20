@@ -1,7 +1,6 @@
 package it.micheledallerive.covid_italia.fragments;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -106,7 +105,6 @@ public class ChartFragment2 extends Fragment {
         tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                Log.i("app", "tab selected");
                 viewPager.setCurrentItem(tab.getPosition());
                 adapter.clearHighlights();
                 switch (tab.getPosition()) {

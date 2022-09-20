@@ -41,7 +41,6 @@ public class NationalData {
             protected Boolean doInBackground(Void... args) {
                 boolean dNull = DateUtils.dates==null;
                 if(dNull) DateUtils.dates = new ArrayList<>();
-                //Log.e("Update", "doInBackground started");
                 try{
                     final String json = DataUtils.getJSON(Constants.URLNazionale);
                     if(data==null||forceUpdate) data=new ArrayList<>();
@@ -54,7 +53,6 @@ public class NationalData {
                             String dateString = ndc.getDateString();
                             DateUtils.dates.add(dateString);
                         }
-                        //Log.e("i", i+"");
                         data.add(ndc);
                     }
                     return true;

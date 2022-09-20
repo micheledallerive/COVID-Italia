@@ -33,7 +33,6 @@ public class NewsFragment extends Fragment {
         NewsData.getData(forceUpdate, new Callback() {
             @Override
             public void onSuccess(Object obj) {
-                //Log.e("Update", "parseNews callback triggered");
                 newsList.setAdapter(null);
                 List<Feed> feeds = (List<Feed>) obj;
                 feeds.sort((o1, o2) -> o2.getDate().compareTo(o1.getDate()));
@@ -58,11 +57,9 @@ public class NewsFragment extends Fragment {
         spinner = v.findViewById(R.id.spinner);
         swipeRefreshLayout = v.findViewById(R.id.swipe_refresh);
         swipeRefreshLayout.setEnabled(false);
-        //Log.e("Update", "NewsFragment created");
         updateNews(v, new Callback() {
             @Override
             public void onSuccess(Object obj) {
-                //Log.e("Update", "updateNews callback triggered");
                 spinner.setVisibility(View.GONE);
                 newsList.setVisibility(View.VISIBLE);
                 swipeRefreshLayout.setEnabled(true);

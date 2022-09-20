@@ -43,49 +43,6 @@ import it.micheledallerive.covid_italia.utils.Utils;
  */
 public class InfectedTab extends BaseTab {
 
-    /*
-
-    ca-app-pub-1382810446229806/8825610848
-
-
-     */
-
-
-
-    /*void predictNextValues(ArrayList<Entry> infectedValues){
-        int size = infectedValues.size()-2;
-        double[] vals = new double[size];
-        for(int i=0;i<size;i++){
-            vals[i]=infectedValues.get(i).getY();
-        }
-        int p = 3-1;
-        int d = 0; // fisso
-        int q = 2;
-        int P = 1;
-        int D = 1;
-        int Q = 0;
-        int m = 0; // fisso
-        int forecastSize = 1;
-
-        float realValue=infectedValues.get(size).getY();
-
-        Log.e("REAL VALUE", realValue+"");
-
-        ArimaParams[] params = new ArimaParams[]{
-                new ArimaParams(p, d, q, P, D, Q, m),
-                new ArimaParams(p-1, d, q, P, D, Q, m),
-                new ArimaParams(p+1, d, q, P, D, Q, m),
-                new ArimaParams(p, d, q-1, P, D, Q, m),
-                new ArimaParams(p, d, q+1, P, D, Q, m),
-        };
-
-        for(int i=0;i<params.length;i++){
-            ForecastResult forecastResult = Arima.forecast_arima(vals, forecastSize, params[i]);
-            double[] forecastData = forecastResult.getForecast();
-            Log.e("FORECAST"+i, "Value: "+forecastData[0]+" Upper: "+forecastResult.getForecastUpperConf()[0]+" Lower: "+forecastResult.getForecastLowerConf()[0]+" Difference: "+(Math.abs(realValue-forecastData[0])));
-        }
-    }*/
-
     public static LineChart infectedChart;
     public static LineChart infectedPChart;
     public static PieChart tamponiChart;
@@ -109,34 +66,6 @@ public class InfectedTab extends BaseTab {
 
     public void setData(Object obj, String regionName) {
         if(regionName==null) regionName=ChartFragment2.region;
-        /*List<Object> objs = (List<Object>)obj;
-        List<DataContainer> containers = (List<DataContainer>)obj;
-        //Log.e("REGIONNAME", regionName);
-        int k=0;
-        if(!regionName.isEmpty()){
-            for(int i=0;i<21;i++)
-                if(((RegionDataContainer)objs.get(i)).getRegionName().equalsIgnoreCase(regionName)){
-                    k=i;
-                    break;
-                }
-        }
-        int z=regionName.isEmpty()?1:21;
-        for(int i=k;i<containers.size();i+=regionName.isEmpty()?1:21){
-            if(objs.get(i) instanceof RegionDataContainer){
-                if(!((RegionDataContainer)objs.get(i)).getRegionName().equalsIgnoreCase(regionName))
-                    continue;
-            }
-            int positivi = containers.get(i).getPositivi();
-            //Log.e(i+"", ""+positivi);
-            infectedValues.add(new Entry(i, positivi));
-            totalValues.add(new Entry(i, containers.get(i).getTotale()));
-            if(i>=21){
-                float nuovi_positivi = containers.get(i).getVariazionePositivi();
-                float positivi_ieri = containers.get(i-z).getPositivi();
-                float perc = (nuovi_positivi*100)/positivi_ieri;
-                infectedPValues.add(new Entry(i, perc));
-            }
-        }*/
 
         List<DayData> containers = (List<DayData>) obj;
         boolean isRegional = !regionName.isEmpty();
@@ -232,7 +161,6 @@ public class InfectedTab extends BaseTab {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        //Log.e("UPDATE", "CREATING INFECTED TAB");
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_infected_tab, container, false);
         setupAds(v);

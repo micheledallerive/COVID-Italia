@@ -99,7 +99,6 @@ public class MapFragment extends Fragment{
         title.setText(oggi.getRegionName());
         description.setText(desc);
 
-        //Log.e("SIZE", "width: "+flyout.getWidth()+" height: "+flyout.getHeight());
         setFlyoutParams(flyout, p);
         return flyout;
     }

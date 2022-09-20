@@ -63,8 +63,6 @@ public class NotificationUtils {
         Intent myIntent;
         PendingIntent pendingIntent;
 
-        //Log.e("ALARM", "STARTED");
-
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.HOUR_OF_DAY, 18);
         calendar.set(Calendar.MINUTE, 15);

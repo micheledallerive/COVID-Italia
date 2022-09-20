@@ -195,10 +195,6 @@ public class Utils {
     }
 
     public static void sendNotification(Context c){
-        //Log.e("BOOL", Preferences.getSharedPreferences().getBoolean(Constants.Preferences.SEND_NOTIFICATIONS, true)+"");
-        /*if(Preferences.isSettedUp())
-            if(!Preferences.getSharedPreferences().getBoolean(Constants.Preferences.SEND_NOTIFICATIONS, true))
-                return;*/
         Intent notifyIntent = new Intent(c, MyReceiver.class);
         PendingIntent pendingIntent = PendingIntent.getBroadcast
                 (c, 777, notifyIntent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);

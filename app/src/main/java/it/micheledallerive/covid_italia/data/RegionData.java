@@ -80,7 +80,6 @@ public class RegionData {
 
             @Override
             protected Boolean doInBackground(Void... args) {
-                //Log.e("Update", "doInBackground2 started");
                 try {
                     if (data == null || forceUpdate) data = new ArrayList<>();
                     final String json = DataUtils.getJSON(Constants.URLRegionale);

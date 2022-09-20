@@ -26,7 +26,6 @@ public class LoadingActivity extends AppCompatActivity {
     private final Timer timer = new Timer();
 
     private void startErrorActivity(Context c, Error error){
-        //Log.e("ERROR", error.toString());
         Intent i = new Intent(c, ErrorActivity.class);
         i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         i.putExtra("error", error.getMessage());
@@ -35,13 +34,8 @@ public class LoadingActivity extends AppCompatActivity {
 }
 
     private void setupNotification(Context c){
-        //Log.e("EXISTS", NotificationUtils.alarmExists(c)+"");
         NotificationUtils.cancelAlarm(c);// TODO ELIMINA
-        //Log.e("EXISTS", NotificationUtils.alarmExists(c)+"");
-        //Log.e("NOTIFICATION", "SETTING UP NOTIFICATIONS");
-        //if(!NotificationUtils.alarmExists(c))
         NotificationUtils.startAlarm(c);
-        //Log.e("EXISTS", NotificationUtils.alarmExists(c)+"");
     }
 
     private void setupPreferences(Context c){
@@ -77,11 +71,9 @@ public class LoadingActivity extends AppCompatActivity {
             setupPreferences(c);
             if(Utils.isFirstTime() || !NotificationUtils.alarmExists(this))
                 setupNotification(c);
-            //Utils.sendNotification(c);
             NationalData.getData(false,new Callback() {
                 @Override
                 public void onSuccess(Object obj) {
-                    //Log.e("Update", "Success 1");
                     RegionData.getData(false, new Callback() {
                         @Override
                         public void onSuccess(Object obj) {

@@ -115,7 +115,6 @@ public class TodayFragment extends Fragment {
         positivePercentage = Utils.round(positivePercentage, 2);
         negativePercentage = Utils.round(negativePercentage, 2);
 
-        //Log.e("tamponi", "positivi" + tamponiPositivi + " negativi " + tamponiNegativi);
 
         List<PieEntry> pieEntries = new ArrayList<>();
         pieEntries.add(new PieEntry(tamponiPositivi, "Positivi ("+positivePercentage+"%)"));
@@ -176,8 +175,6 @@ public class TodayFragment extends Fragment {
         c=getContext();
 
         updateData(false);
-
-        //Log.e("ENTRIES", entries+"");
 
         swipeRefreshLayout.setOnRefreshListener(() -> { disableNavigation(); updateData(true);});
         return v;

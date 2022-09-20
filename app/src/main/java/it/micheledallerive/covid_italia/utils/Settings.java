@@ -9,7 +9,6 @@ public class Settings {
     public static void toggleNotifications(Context c){
         boolean val = Preferences.getSharedPreferences().getBoolean(Constants.Preferences.SEND_NOTIFICATIONS, true);
         Preferences.getEditor().putBoolean(Constants.Preferences.SEND_NOTIFICATIONS, !val).commit();
-        //Log.e("VAL", !val+"");
         NotificationUtils.cancelAlarm(c);
     }
 

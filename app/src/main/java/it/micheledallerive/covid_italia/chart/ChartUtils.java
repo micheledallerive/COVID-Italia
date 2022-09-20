@@ -315,7 +315,6 @@ public class ChartUtils {
         float xOffset = chart.getBarData().getXMax()/25f;
         float yMaxOffset = chart.getBarData().getYMax()/3.3f;
         float yMinOffset = chart.getBarData().getYMin()<0?chart.getBarData().getYMin()/10f:0f;
-        //Log.e("YMINOFFSET", ""+yMinOffset);
         chart.getXAxis().setAxisMinimum(chart.getBarData().getXMin() - xOffset);
         chart.getXAxis().setAxisMaximum(chart.getBarData().getXMax() + xOffset);
         chart.getAxisLeft().setAxisMinimum(chart.getBarData().getYMin()+yMinOffset);

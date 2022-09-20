@@ -59,7 +59,6 @@ public class NewsData {
                     boolean toInsertDays=false;
                     String[] urls = Constants.newspapers;
                     for(String u : urls){
-                        //Log.e("URLL", u);
                         URL url = new URL(u);
                         XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
                         factory.setNamespaceAware(false);
@@ -92,7 +91,6 @@ public class NewsData {
                                         if(newspaper.contains(".it")){
                                             newspaper=newspaper.substring(0,newspaper.indexOf(".it"));
                                         }
-                                        //Log.e("NEWSPAPER", newspaper);
                                     }
                                 }
                                 //if the tag is called "description"
@@ -105,7 +103,6 @@ public class NewsData {
                                         }
 
                                         description = removeDescriptionTags(description);
-                                       //Log.e("Description", description);
                                         f.setDescription(description);
                                     }
                                 }
@@ -193,7 +190,6 @@ public class NewsData {
                 SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss", Locale.ITALY);
                 nextText=nextText.replace("T", " ");
                 nextText=nextText.replace("Z", "");
-                //Log.e("NTrcodio", nextText);
                 return formatter.parse(nextText);
             }catch(Exception e1){
                 e1.printStackTrace();

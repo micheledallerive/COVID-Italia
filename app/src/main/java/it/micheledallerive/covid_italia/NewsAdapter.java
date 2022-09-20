@@ -87,7 +87,6 @@ public class NewsAdapter extends BaseAdapter {
                     .placeholder(R.color.gray)
                     .into(image);
         }else{
-            //Log.e("COUNTER", adCounter+"");
             vi=inflater.inflate(R.layout.ad_row_layout, null);
             View container = vi.findViewById(R.id.adViewContainer);
             AdView mAdView = new AdView(context);
@@ -96,9 +95,7 @@ public class NewsAdapter extends BaseAdapter {
             ((LinearLayout)container).addView(mAdView);
             AdRequest adRequest = new AdRequest.Builder().build();
             if(Constants.isAdEnabled) mAdView.loadAd(adRequest);
-            //Log.e("CREATING AD", adCounter+"");
         }
-        //Log.e("pos", position+1+"");
         return vi;
     }
 

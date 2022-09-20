@@ -13,9 +13,7 @@ public class MyReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        //Log.e("B", "BUILDING");
         NotificationManager managerCompat = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        //Log.e("managernull", (managerCompat==null)+"");
         assert managerCompat != null;
         managerCompat.notify(NOTIFICATION_ID, NotificationUtils.createNotification(context, managerCompat));
     }
