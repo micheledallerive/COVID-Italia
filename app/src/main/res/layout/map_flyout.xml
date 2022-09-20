@@ -13,6 +13,7 @@
         android:background="@drawable/marker_pointer"
         android:backgroundTint="#757575"
         android:translationY="-1.5dp"
+        android:alpha=".85"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/marker_content_container"
@@ -30,7 +31,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        
+
         >
 
         <TextView

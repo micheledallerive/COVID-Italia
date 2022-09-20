@@ -13,6 +13,7 @@
         <entry key="app/src/main/res/drawable/ic_virus.xml" value="0.197" />
         <entry key="app/src/main/res/drawable/map_legend_gradient.xml" value="0.197" />
         <entry key="app/src/main/res/drawable/map_legend_white.xml" value="0.197" />
+        <entry key="app/src/main/res/drawable/square.xml" value="0.163" />
         <entry key="app/src/main/res/layout/activity_error.xml" value="0.1890625" />
         <entry key="app/src/main/res/layout/activity_loading.xml" value="0.1890625" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.17806484295845998" />
